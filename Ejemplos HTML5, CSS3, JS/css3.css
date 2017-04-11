@@ -1,0 +1,128 @@
+/*
+Transforma escala, param1 -> horiz, param 2 -> vertical
+*/
+-moz-transform: scale(1,-1);
+-webkit-transform: scale(1,-1);
+
+/*
+Rota en el sentido del reloj
+*/
+-moz-transform: rotate(30deg);
+-webkit-transform: rotate(30deg);
+/*
+mueve o desplaza el elemento en la pantalla a una nueva
+posición.
+Dos valores pueden ser declarados en esta función si queremos mover el elemento horizontal y verticalmente, o podemos usar
+funciones independientes llamadas translateX y translateY.
+*/
+-moz-transform: translate(100px);
+-webkit-transform: translate(100px);
+
+/*
+Cambia simetría de elementos con 2 parámetros independientes, horizontal y vertical
+*/
+-moz-transform: skew(20deg,20deg);
+-webkit-transform: skew(20deg,20deg);
+
+/*
+Transformaciones combinadas
+Una de las cosas que debe recordar en este caso es que el orden es importante. Esto es debido a que algunas funciones
+mueven el punto original y el centro del objeto, cambiando de este modo los parámetros que el resto de las funciones
+utilizarán para operar.
+*/
+-moz-transform: translateY(100px) rotate(45deg) scaleX(0.3);
+-webkit-transform: translateY(100px) rotate(45deg) scaleX(0.3);
+
+
+/* MOZ, WEBKIT por compatibilidad, ya que no está disponible en todos*/
+/* border-radius, recibe el radio del borde en el orden del reloj (sup-iz, sup-der,inf-der,inf-iz)
+	si se le dan 2 parámetros, el primero será para sup-iz e inf-der, el segundo para sup-der e inf-iz
+	si se la da 1 parámetro, es para los 4
+*/
+-moz-border-radius: 20px;
+-webkit-border-radius: 20px;
+border-radius: 20px ;
+
+/*box-shadow da sombras, primer parámetro el color, puede ser en hex también
+	segundo parámetro distancia horizontal y tercero la vertical, puede ser negativo
+	valores negativos es a la izq y arriba, positivos son a la derecha y abajo
+	valor 0 o nulo detrás del elemento, permitiendo un difuminado a su alrededor
+	cuarto parámetro, distancia de difuminación, sombra real
+	quinto parámetro, expande el area que cubre la sombra
+	sexto, inset, se convierte en sombra interna, simulando profundidad
+	*/
+-moz-box-shadow: rgb(150,150,150) 5px 5px 10px inset;
+-webkit-box-shadow: rgb(150,150,150) 5px 5px 10px inset;
+box-shadow: rgb(150,150,150) 5px 5px 10px inset;
+
+/*
+linear-gradient(posicióninicio, color inicial, color final).
+El primer valor puede ser especificado en pixeles, porcentaje o usando las
+palabras clave top, bottom, left y right
+El punto de comienzo puede ser reemplazado
+por un ángulo para declarar una dirección específica del gradiente:
+background: linear-gradient(30deg, #FFFFFF, #006699);
+También podemos declarar los puntos de terminación para cada color:
+background: linear-gradient(top, #FFFFFF 50%, #006699 90%);
+*/
+
+background: -webkit-linear-gradient(top, #FFFFFF 50%, #006699 90%);
+background: -moz-linear-gradient(top, #FFFFFF 50%, #006699 90%);
+
+/*
+Gradiante Radial
+La posición de comienzo es el origen y puede ser declarada en pixeles, porcentaje o una combinación de las palabras
+clave center, top, bottom, left y right. Existen dos posibles valores para la forma (circle y ellipse) y la terminación
+para el color indica el color y la posición donde las transiciones comienzan.
+*/
+
+background: -webkit-radial-gradient(center, circle, #FFFFFF 0%, #006699 200%);
+background: -moz-radial-gradient(center, circle, #FFFFFF 0%, #006699 200%);
+} 
+
+/*
+la propiedad transition puede tomar hasta cuatro parámetros separados por un
+espacio. El primer valor es la propiedad que será considerada para hacer la transición (en nuestro ejemplo elegimos
+transform). Esto es necesario debido a que varias propiedades pueden cambiar al mismo tiempo y probablemente
+necesitemos crear los pasos del proceso de transición solo para una de ellas. El segundo parámetro especifica el tiempo
+que la transición se tomará para ir de la posición inicial a la final. El tercer parámetro puede ser cualquiera de las siguientes
+palabras clave: ease, linear, ease-in, ease-out o ease-in-out. Estas palabras clave determinan cómo se realizará el
+proceso de transición basado en una curva Bézier. Cada una de ellas representa diferentes tipos de curva Bézier, y la mejor
+forma de saber cómo trabajan es viéndolas funcionar en pantalla. El último parámetro para la propiedad transition es el
+retardo. Éste indica cuánto tiempo tardará la transición en comenzar.
+Para producir una transición para todas las propiedades que están cambiando en un objeto, la palabra clave all debe ser
+especificada. También podemos declarar varias propiedades a la vez listándolas separadas por coma.
+*/
+
+-moz-transition: -moz-transform 1s ease-in-out 0.5s;
+-webkit-transition: -webkit-transform 1s ease-in-out 0.5s;
+
+#titulo {
+font:  50px MiNuevaFuente, verdana, sans-serif;
+/*
+La función rgba() tiene cuatro atributos. Los primeros tres son similares a los usados en rgb() y simplemente declaran
+los valores para los colores rojo, verde y azul en números decimales del 0 al 255. El último, en cambio, corresponde a la
+nueva capacidad de opacidad. Este valor se debe encontrar dentro de un rango que va de 0 a 1, con 0 como totalmente
+transparente y 1 como totalmente opaco.
+*/
+text-shadow: rgba(0,0,0,0.5) 3px 3px 5px;
+
+/*
+La sintaxis de esta función es:
+hsla(tono, saturación, luminosidad, opacidad).
+tono representa el color extraído de una rueda imaginaria y es expresado en grados desde 0 a 360.
+Cerca de 0 y 360 están los colores rojos, cerca de 120 los verdes y cerca de 240 los azules. El valor saturación es
+representado en porcentaje, desde 0% (escala de grises) a 100% (todo color o completamente saturado). La luminosidad
+es también un valor en porcentaje desde 0% (completamente oscuro) a 100% (completamente iluminado). El valor 50%
+representa luminosidad normal o promedio. El último valor, así como en rgba(), representa la opacidad.
+*/
+color: hsla(120, 100%, 50%, 0.5);
+
+/*outline: 2px dashed #000099;
+outline-offset: 15px;*/
+
+-moz-border-image: url("foto.jpg") 50 repeat;
+-webkit-border-image: url("foto.jpg") 50 repeat;
+border-image: url("foto.jpg") 50 repeat;
+
+}

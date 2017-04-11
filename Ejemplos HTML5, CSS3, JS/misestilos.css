@@ -1,0 +1,33 @@
+
+
+p:nth-child(odd){
+background: #999999;
+} 
+p:nth-child(even){
+background: #CCCCCC;
+}
+p:last-child{
+	background: #FF0000;
+}
+/* Todo elemento que es hijo de otro elemento que tiene clase "mitexto1"*/
+.mitexto1:nth-child(2){
+	background: #00FF00;
+}
+:not(.mitexto2){
+	margin: 0px;
+}
+
+/*Sólo el p con clase mitexto2 que sea hijo de div*/
+div > p.mitexto2{
+color: #FF00FF;
+}
+
+/*Únicamente el p que vaya después de p con clase mitexto2, siendo ambos hijos del mismo padre*/
+p.mitexto2 + p{
+color: #990000;
+}
+
+/*Todos los p que vayan después de p con clase mitexto2, siendo ambos hijos del mismo padre*/
+p.mitexto2 ~ p{
+color: #990000;
+}

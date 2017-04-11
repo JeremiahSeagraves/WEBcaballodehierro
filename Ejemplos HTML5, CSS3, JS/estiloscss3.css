@@ -1,0 +1,47 @@
+body {
+text-align: center;
+} 
+#principal {
+display: block;
+width: 500px;
+margin: 50px auto;
+padding: 15px;
+text-align: center;
+border: 1px solid #999999;
+background: #DDDDDD;
+
+-moz-border-radius: 20px;
+-webkit-border-radius: 20px;
+border-radius: 20px ;
+
+-moz-box-shadow: rgb(150,150,150) 5px 5px 10px inset;
+-webkit-box-shadow: rgb(150,150,150) 5px 5px 10px inset;
+box-shadow: rgb(150,150,150) 5px 5px 10px inset;
+
+background: -webkit-radial-gradient(center, circle, #FFFFFF 0%, #006699 200%);
+background: -moz-radial-gradient(center, circle, #FFFFFF 0%, #006699 200%);
+
+-moz-transform:  rotate(15deg) scaleX(0.8);
+-webkit-transform:  rotate(15deg) scaleX(0.8);
+
+-moz-transition: all .3s ease-in-out 0.5s;
+-webkit-transition: all .3s ease-in-out 0.5s;
+}
+
+#principal:hover{
+-moz-transform: rotate(5deg);
+-webkit-transform: rotate(5deg);
+}
+
+#titulo {
+font:  50px MiNuevaFuente, verdana, sans-serif;
+text-shadow: rgba(0,0,0,0.5) 3px 3px 5px;
+-moz-border-image: url("foto.jpg") 50 repeat;
+-webkit-border-image: url("foto.jpg") 50 repeat;
+border-image: url("foto.jpg") 50 repeat;
+}
+
+@font-face { 
+	font-family: 'MiNuevaFuente';
+	src: url('Hermann-Gotisch.ttf');
+}
