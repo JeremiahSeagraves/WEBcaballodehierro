@@ -1,0 +1,176 @@
+/* base styles */
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background: url("../images/body-bg.png") repeat fixed center top #FFFFFF;
+    color: #7F7F7F;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 12px;
+    line-height: 17px;
+}
+img {
+    border: 0 none;
+}
+.container {
+    margin:30px auto 0;
+    position:relative;
+    text-align:left;
+    width:1000px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+
+
+/* header section */
+header {
+    background: url("../images/header-bg.jpg") repeat scroll left top #fff;
+    border-bottom:2px solid #e0e0e0;
+    position: relative;
+    z-index: 10;
+}
+.top_head {
+    overflow: hidden;
+    position: relative;
+}
+.logo {
+    float: left;
+    padding: 37px 0 0 39px;
+}
+#search {
+    float: right;
+    margin: 21px 41px 0 0;
+    text-align: right;
+}
+#search form {
+    float:right;
+}
+#search form input[type="text"] {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #E0E0E0;
+    float: left;
+    font-family: Arial,Helvetica,sans-serif;
+    height: 15px;
+    padding: 5px;
+    width: 129px;
+}
+#search form input[type="submit"] {
+    background-color: #FFFFFF;
+    border: 1px solid #E0E0E0;
+    border-left-width:0px;
+    color: #383838;
+    cursor:pointer;
+    float: left;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    height: 27px;
+    padding: 0;
+    width: 64px;
+}
+#social {
+    float:right;
+    list-style:none outside none;
+    margin:0 30px 0 0;
+    padding:0;
+}
+#social li {
+    float:left;
+    padding:0 0 0 5px;
+}
+#social li a:hover img {
+    margin-top:1px;
+}
+
+
+
+/*navigation menu*/
+nav {
+    background-color:#00942f;
+    overflow: hidden;
+}
+nav ul {
+    margin: 0;
+    padding: 0;
+}
+nav ul li {
+    float: left;
+}
+nav ul li a {
+    color: #FFFFFF;
+    display: block;
+    font-size: 11px;
+    font-weight: bold;
+    height: 20px;
+    line-height: 20px;
+    padding: 4px 10px 4px 11px;
+    position: relative;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+nav ul li a:hover, nav ul li.selected a {
+    background: none repeat scroll 0 0 #353535;
+}
+#submenu {
+    background: -moz-linear-gradient(#ffffff, #f6f6f6); /* FF 3.6+ */  
+    background: -ms-linear-gradient(#ffffff, #f6f6f6); /* IE10 */  
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ffffff), color-stop(100%, #f6f6f6)); /* Safari 4+, Chrome 2+ */  
+    background: -webkit-linear-gradient(#ffffff, #f6f6f6); /* Safari 5.1+, Chrome 10+ */  
+    background: -o-linear-gradient(#ffffff, #f6f6f6); /* Opera 11.10 */  
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#f6f6f6'); /* IE6 & IE7 */  
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#f6f6f6')"; /* IE8+ */  
+    background: linear-gradient(#ffffff, #f6f6f6); /* the standard */ 
+
+    border: 1px solid #E0E0E0;
+    height: 34px;
+    margin: 20px 40px;
+}
+#submenu ul {
+    margin: 0;
+    padding: 0;
+}
+#submenu li {
+    float: left;
+    line-height: 1em;
+    list-style: none outside none;
+    margin: 0;
+    position: relative;
+}
+#submenu li a {
+    background: url("../images/smenup.png") no-repeat scroll 0 9px transparent;
+    border-right: 1px solid #E0E0E0;
+    color: #383838;
+    display: block;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 14px;
+    margin: 0 0 0 19px;
+    padding: 9px 18px 11px 24px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+#submenu li a:hover {
+    background-image: url("../images/smenua.png");
+}
+
+
+/* footer section */
+footer {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border-top: 1px solid #E0E0E0;
+    margin: 0 0 5px;
+    padding: 15px 0 15px 20px;
+}
+footer #privacy {
+    color: #9B9B9B;
+    font-size: 12px;
+    line-height: 20px;
+    overflow: hidden;
+    width: 100%;
+}
+footer a{
+    color: #9B9B9B;
+    text-decoration: none;
+}
