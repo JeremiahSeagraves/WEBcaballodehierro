@@ -35,11 +35,18 @@
                   mysqli_close($link);
                   $articulos = mysqli_fetch_all($result,MYSQLI_ASSOC);
                   foreach($articulos as $articulo){
-                    echo "<td><figure>";
+                    $id_celda="articulo".$articulo['id_articulo'];
+                    $id_figure="articulo".$articulo['id_articulo'];
+                    $id_="articulo".$articulo['id_articulo'];
+                    echo "<td id=".$id_celda."><figure name='imagen'>";
                     echo "<img src=images/".$articulo['nombre_imagen']." width='100' heigth='80' >";
                     echo "</figure><figcaption>";
                     echo "precio:$". $articulo['precio']."<br>";
-                    echo "<input type='button' id=".$articulo['id_articulo']." name='vermas' value='Ver más'></figcaption></td>";
+                    echo "<input type='button' id=".$articulo['id_articulo']." name='vermas' value='Ver más'>";
+                    echo "<input type='hidden' name='proveedor' value=".$articulo['proveedor']." >";
+                    echo "<input type='hidden' name='descripcion' value=".$articulo['descripcion']." >";
+                    echo "<input type='hidden' name='categoria' value=".$articulo['categoria']." >";
+                    echo "</figcaption></td>";
                   }
 
                   ?>
@@ -50,11 +57,8 @@
     </div>
     <div id="articulo" class="container">
       <article id="informacion" class="contenido-articulo">
-
-        <figcaption>
-          Codigo </br>
-          Cantidad</br>
-          Precio $250 </br>
+        <figure id="imagen_articulo"></figure>
+        <figcaption id="detalles_articulo">
             <input type="button" id="compra" name="compra" value="Comprar">
             <input type="button" id="cancelar" name="cancelar" value="Cancelar">
         </figcaption>
