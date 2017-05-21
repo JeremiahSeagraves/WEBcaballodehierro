@@ -57,6 +57,11 @@ font-weight: bold;
   z-index: 10;
 }
 
+#content{
+    margin: 30px auto 0;
+    width: 980px;
+}
+
 article header{
   background: none;
   background-color: #e0e0e0;
@@ -72,6 +77,7 @@ td.titulo{
   font-weight: bold;
 }
 .top_head {
+    position: fixed;
     overflow: hidden;
     position: relative;
 }
