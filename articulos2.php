@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <title>Productos</title>
     <meta charset="utf-8">
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <link rel="stylesheet" href="css/reset.css" type="text/css" media="screen">
     <link rel="stylesheet" href="css/styles.css" type="text/css" media="screen">
-    <script type="text/javascript" src="js/ventanas.js"></script>
+    <script type="text/javascript" src="js/ventanas.js" ></script>
 </head>
-
 <body>
+  <<?php include 'header.php'?>
     <div class="container">
         <section>
             <table id="mostrador">
@@ -21,34 +20,29 @@
                 </thead>
                 <tbody>
                   <?php
-
-                  #Conectamos con MySQL
-                  $link=mysqli_connect("localhost","root","","caballo_hierro");
-                  if (!$link) {
-
-                      die("Error al conectar: ".mysql_error());
-                  }
-
+                  require_once ('conexionBD.php');
+                  require_once ('funciones.php');
                   # Buscamos la imagen a mostrar
-                  $query = "SELECT * FROM `articulos` WHERE categoria='balones'";
-                  $result = mysqli_query($link,$query);
-                  mysqli_close($link);
-                  $articulos = mysqli_fetch_all($result,MYSQLI_ASSOC);
+                  $query = "SELECT * FROM 'articulos' WHERE categoria='balones'";
+                  $articulos = consultarBaseDatos($query,$conexion);
                   foreach($articulos as $articulo){
-                    $id_celda="articulo".$articulo['id_articulo'];
-                    $id_figure="articulo".$articulo['id_articulo'];
-                    $id_="articulo".$articulo['id_articulo'];
-                    echo "<td id=".$id_celda."><figure name='imagen'>";
-                    echo "<img src=images/".$articulo['nombre_imagen']." width='100' heigth='80' >";
+                    $id_articulo = $articulo['id_articulo'];
+                    $id_celda="articulo".$id_articulo;
+                    $id_nombre="nombre".$id_articulo;
+                    $id_figure="figura".$id_articulo;
+                    $id_precio="precio".$id_articulo;
+                    $id_proveedor="proveedor".$id_articulo;
+                    $id_descripcion="descripcion".$id_articulo;
+                    echo "<td id=".$id_celda."><figure id=".$id_figure." name='imagen' >";
+                    echo "<img src=images/products".$articulo['nombre_imagen']." width='100' heigth='80' >";
                     echo "</figure><figcaption>";
-                    echo "precio:$". $articulo['precio']."<br>";
-                    echo "<input type='button' id=".$articulo['id_articulo']." name='vermas' value='Ver más'>";
-                    echo "<input type='hidden' name='proveedor' value=".$articulo['proveedor']." >";
-                    echo "<input type='hidden' name='descripcion' value=".$articulo['descripcion']." >";
-                    echo "<input type='hidden' name='categoria' value=".$articulo['categoria']." >";
+                    echo "<p id =".$id_precio.">$".$articulo['nombre']."</p>";
+                    echo "<p id =".$id_precio.">$".$articulo['precio']."</p>";
+                    echo "<input type='button' id=".$id_articulo." name='vermas' value='Ver más'>";
+                    echo "<input type='hidden' id=".$id_proveedor." name='proveedor' value=".$articulo['proveedor']." >";
+                    echo "<input type='hidden' id=".$id_descripcion." name='descripcion' value=".$articulo['descripcion']." >";
                     echo "</figcaption></td>";
                   }
-
                   ?>
 
                 </tbody>
@@ -57,12 +51,13 @@
     </div>
     <div id="articulo" class="container">
       <article id="informacion" class="contenido-articulo">
-        <figure id="imagen_articulo"></figure>
-        <figcaption id="detalles_articulo">
+          <table id = "detalles_articulo">
+
+          </table>
             <input type="button" id="compra" name="compra" value="Comprar">
             <input type="button" id="cancelar" name="cancelar" value="Cancelar">
-        </figcaption>
       </article>
     </div>
+    <<?php include 'footer.php'; ?>
 </body>
 </html>
