@@ -9,21 +9,41 @@
   <!--   <link rel="stylesheet" href="css/nivo-slider.css" type="text/css" media="screen">-->
 
      <!-- Linking scripts -->
-    <script src="js/cambiaimg.js"></script>
+
+
 </head>
 
 <body>
 <div class="container">
 
 	<?php
-					 session_start();
-					 if(!isset($_SESSION["registrado"])){
-							include 'layout/login_header.php';
-					 }else{
-							 include 'layout/edicion_perfil_header.php';
-					 }
+	 session_start();
+	 if(!isset($_SESSION["registrado"])){
+			 echo "<div id='header'>";
+					 echo    "<div id='inicio_sesion' class='boton'>".
+											 "Iniciar sesión".
+									 "</div>";
+					 echo "<div class='boton'>";
+							 echo "<a href='cuenta_usuario/nuevo_usuario.php' title='Registrarse'>"."Registrarse"."</a>";
+					 echo "</div>";
+			 echo "</div>";
+			 echo "<script src='js/efectos_index.js'></script>";
+	 }else{
+			 echo "<div id='header'>";
+					 echo" <p id='saludo'>Hola " . $_SESSION["usuario"]."!</p>";
+					 echo "<div class='boton'>";
+							 echo "<a href='cuenta_usuario/editar_perfil.php' title='Editar Perfil'>"."Editar Perfil"."</a>";
+					 echo "</div>";
+					 echo "<div class='boton'>";
+							 echo "<a href='cuenta_usuario/cerrar_sesion.php' title='Cerrar sesion'>"."Cerrar sesión"."</a>";
+					 echo "</div>";
+			 echo "</div>";
+			 echo "<script src='js/cambiaimg.js'></script>";
+	 }
+
 	 include 'layout/header.php';
-	 ?>
+?>
+
 	<div class="top_head"><!-- Defining the top head element -->
 			<div class="logo"><!-- Defining the logo element -->
 					<a href="index.php">
@@ -45,6 +65,24 @@
 	<!--se incluye el pie de la pagina -->
 	<?php include 'layout/footer.php'; ?>
 
+	<div id="caja_flotante" class="container">
+	      <div class="modal">
+	        <h1>Inicio de Sesi&oacuten</h1>
+	           <form id="formulario" action="cuenta_usuario/inicio_sesion.php" method="post">
+	             <div>
+	               <label >Usuario</label>
+	               <input type="text" name="usuario" value = ""/>
+	             </div>
+	             <div >
+	               <label >Contrase&ntilde;a</label>
+	               <input type="password" name="contrasena" value = ""/>
+	             </div>
+	             <div >
+	               <input id="boton" name="enviar" type="submit" value="Enviar"/>
+	             </div>
+	           </form>
+	      </div>
+	</div>
 </div>
 </body>
 </html>
