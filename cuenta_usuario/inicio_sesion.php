@@ -12,6 +12,7 @@ if(isset($_POST['enviar'])){
       if($row['contrasena'] == $contrasena){
         $_SESSION["registrado"] = true;
         $_SESSION["id_usuario"] = $row['id_usuario'];
+        echo $row['id_usuario'];
         $_SESSION["usuario"] = $row['usuario'];
         $_SESSION["nombre"] = $row['nombre'];
         $_SESSION["contrasena"] = $row['contrasena'];
