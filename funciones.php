@@ -1,13 +1,10 @@
 <?php
 
 function consultarBaseDatos($query,$conexion){
-  /*$link = mysqli_connect("localhost","root","","equipo6_caballo_hierro");
-  if (!$link) {
-      die("Error al conectar: ".mysqli_connect_error());
-  }*/
-  $result = mysqli_query($conexion, $query);
-  mysqli_close($conexion);
+  $result = mysqli_query($conexion,"SELECT * FROM articulos WHERE categoria = 'balones'");
+
   $row=mysqli_fetch_all($result , MYSQLI_ASSOC);
+  mysqli_close($conexion);
   return $row;
 }
  ?>

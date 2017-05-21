@@ -3,6 +3,6 @@
     Iniciar sesion
   </div>
     <div >
-      <a  title='Registrarse'>"."Registrarse"."</a>
+      <a  href="cuenta_usuario/nuevo_usuario.php" title='Registrarse'>Registrarse</a>
     </div>
   </div>

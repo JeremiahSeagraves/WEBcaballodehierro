@@ -9,7 +9,7 @@
     <script type="text/javascript" src="js/ventanas.js" ></script>
 </head>
 <body>
-  <<?php include 'header.php'?>
+  <?php include 'encabezados/header.php'?>
     <div class="container">
         <section>
             <table id="mostrador">
@@ -23,7 +23,7 @@
                   require_once ('conexionBD.php');
                   require_once ('funciones.php');
                   # Buscamos la imagen a mostrar
-                  $query = "SELECT * FROM 'articulos' WHERE categoria='balones'";
+                  $query = "SELECT * FROM 'articulos' WHERE categoria = 'balones'";
                   $articulos = consultarBaseDatos($query,$conexion);
                   foreach($articulos as $articulo){
                     $id_articulo = $articulo['id_articulo'];
@@ -34,9 +34,9 @@
                     $id_proveedor="proveedor".$id_articulo;
                     $id_descripcion="descripcion".$id_articulo;
                     echo "<td id=".$id_celda."><figure id=".$id_figure." name='imagen' >";
-                    echo "<img src=images/products".$articulo['nombre_imagen']." width='100' heigth='80' >";
+                    echo "<img src=images/productos/".$articulo['nombre_imagen']." width='100' heigth='80' >";
                     echo "</figure><figcaption>";
-                    echo "<p id =".$id_precio.">$".$articulo['nombre']."</p>";
+                    echo "<p id =".$id_nombre.">".$articulo['nombre']."</p>";
                     echo "<p id =".$id_precio.">$".$articulo['precio']."</p>";
                     echo "<input type='button' id=".$id_articulo." name='vermas' value='Ver más'>";
                     echo "<input type='hidden' id=".$id_proveedor." name='proveedor' value=".$articulo['proveedor']." >";
@@ -50,14 +50,11 @@
         </section>
     </div>
     <div id="articulo" class="container">
-      <article id="informacion" class="contenido-articulo">
-          <table id = "detalles_articulo">
+      <div id="informacion" class="contenido-articulo">
 
-          </table>
-            <input type="button" id="compra" name="compra" value="Comprar">
-            <input type="button" id="cancelar" name="cancelar" value="Cancelar">
-      </article>
+            
+      </div>
     </div>
-    <<?php include 'footer.php'; ?>
+    <?php include 'encabezados/footer.php'; ?>
 </body>
 </html>

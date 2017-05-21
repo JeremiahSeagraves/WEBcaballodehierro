@@ -206,7 +206,13 @@ aside{
   width: 200px;
 }
 
- figure, figcaption {
+td{
+  text-align: center;
+}
+
+
+
+#informacion{
   text-align: center;
 }
 

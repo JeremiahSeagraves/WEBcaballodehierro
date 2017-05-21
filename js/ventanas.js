@@ -14,15 +14,17 @@ var imagen_elemento= 'figura'+id_articulo;
 var precio_elemento = 'precio'+id_articulo;
 var descripcion_elemento = 'descripcion'+id_articulo;
 var proveedor_elemento = 'proveedor'+id_articulo;
-var imagen = document.getElementById("imagen_elemento").innerHTML;
-var nombre = document.getElementById('nombre_elemento').innerHTML;
-var precio = document.getElementById('precio_articulo').innerHTML;
-var descripcion = document.getElementById('precio_articulo').innerHTML;
-var proveedor = document.getElementById('proveedor_articulo').innerHTML;
-var cabecera_tabla = "<th><tr><td>"+nombre+"</td></tr></th>"
-var cuerpo_tabla = "<tbody><tr><td>"+imagen+"</td></tr><tr><td>"+precio+
-"</td></tr><tr><td>"+descripcion+"</td></tr><tr><td>Proveedor: "+proveedor+"</td></tr></tbody>"
-document.getElementById("detalles_articulo").innerHTML = cabecera_tabla + cuerpo_tabla;
+var imagen = document.getElementById(imagen_elemento).innerHTML;
+var nombre = document.getElementById(nombre_elemento).innerHTML;
+var precio = document.getElementById(precio_elemento).innerHTML;
+var descripcion = document.getElementById(descripcion_elemento).innerHTML;
+var proveedor = document.getElementById(proveedor_elemento).innerHTML;
+var botones = "<input type='button' id='compra' name='compra' value='Comprar'> "+
+"<input type='button' id='cancelar' name='cancelar' value='Cancelar'>"
+var cuerpo_articulo = "<div>"+nombre+"</div><div>"+imagen+"</div>"+precio+
+"<div>"+descripcion+"</div><div>Proveedor: "+proveedor+"</div>"
+document.getElementById("informacion").innerHTML = cuerpo_articulo + botones;
+document.getElementById('cancelar').onclick=ocultarModalBoton;
 ventana.style.display = 'block';
 }
 
@@ -41,7 +43,7 @@ window.onload = function(){
   ventana = document.getElementById('articulo');
   window.onclick = ocultarModalClick;
   asignarEventosBotones();
-  document.getElementById('cancelar').onclick=ocultarModalBoton;
+
 
 
 }
