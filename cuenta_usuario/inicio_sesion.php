@@ -4,7 +4,7 @@ $usuario = $_POST['usuario'];
 $contrasena = $_POST['contrasena'];
 
 if(isset($_POST['enviar'])){
-    $query = "SELECT usuario,contrasena FROM usuarios WHERE usuarios = '$usuario'";
+    $query = "SELECT usuario,contrasena FROM usuarios WHERE usuario = '$usuario'";
     $resultado = mysqli_query($conexion, $query);
     $row = mysqli_fetch_assoc($resultado);
 
