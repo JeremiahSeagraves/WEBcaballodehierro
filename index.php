@@ -14,9 +14,16 @@
 
 <body>
 <div class="container">
-	<?php include 'cuenta_usuario/login_header.php' ?>
-	<!--se incluye el encabezado de la pagina -->
-	<?php include 'encabezados/header.php'; ?>
+
+	<?php
+					 session_start();
+					 if(!isset($_SESSION["registrado"])){
+							include 'layout/login_header.php';
+					 }else{
+							 include 'layout/edicion_perfil_header.php';
+					 }
+	 include 'layout/header.php';
+	 ?>
 	<div class="top_head"><!-- Defining the top head element -->
 			<div class="logo"><!-- Defining the logo element -->
 					<a href="index.php">
@@ -36,7 +43,7 @@
 	</section>
 
 	<!--se incluye el pie de la pagina -->
-	<?php include 'encabezados/footer.php'; ?>
+	<?php include 'layout/footer.php'; ?>
 
 </div>
 </body>
