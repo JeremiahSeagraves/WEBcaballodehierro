@@ -9,7 +9,7 @@
   <!--   <link rel="stylesheet" href="css/nivo-slider.css" type="text/css" media="screen">-->
 
      <!-- Linking scripts -->
-		 	<script src="js/efectos.js"></script>
+
 
 </head>
 
@@ -27,6 +27,7 @@
 							 echo "<a href='cuenta_usuario/nuevo_usuario.php' title='Registrarse'>"."Registrarse"."</a>";
 					 echo "</div>";
 			 echo "</div>";
+			 echo "<script src='js/efectos_index.js'></script>";
 	 }else{
 			 echo "<div id='header'>";
 					 echo" <p id='saludo'>Hola " . $_SESSION["usuario"]."!</p>";
@@ -37,6 +38,7 @@
 							 echo "<a href='cuenta_usuario/cerrar_sesion.php' title='Cerrar sesion'>"."Cerrar sesión"."</a>";
 					 echo "</div>";
 			 echo "</div>";
+			 echo "<script src='js/cambiaimg.js'></script>";
 	 }
 
 	 include 'layout/header.php';
