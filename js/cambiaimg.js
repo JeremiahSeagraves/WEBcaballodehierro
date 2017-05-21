@@ -20,7 +20,7 @@
     /**
     * Función que se ejecuta una vez cargada la página
     */
-    onload=function()
+    window.onload=function()
     {
         // Cargamos una imagen aleatoria
         rotarImagenes();
