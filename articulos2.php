@@ -9,8 +9,9 @@
     <script type="text/javascript" src="js/ventanas.js" ></script>
 </head>
 <body>
-  <?php include 'encabezados/header.php'?>
+
     <div class="container">
+      <?php include 'layout/header.php'?>
         <section>
             <table id="mostrador">
                 <thead>
@@ -23,7 +24,7 @@
                   require_once ('conexionBD.php');
                   require_once ('funciones.php');
                   # Buscamos la imagen a mostrar
-                  $query = "SELECT * FROM 'articulos' WHERE categoria = 'balones'";
+                  $query = "SELECT * FROM articulos WHERE categoria = 'balones'";
                   $articulos = consultarBaseDatos($query,$conexion);
                   foreach($articulos as $articulo){
                     $id_articulo = $articulo['id_articulo'];
@@ -48,13 +49,14 @@
                 </tbody>
             </table>
         </section>
+          <?php include 'layout/footer.php'; ?>
     </div>
-    <div id="articulo" class="container">
-      <div id="informacion" class="contenido-articulo">
+    <div id="caja_flotante" class="container">
+      <div id="informacion" class="modal">
 
-            
+
       </div>
     </div>
-    <?php include 'encabezados/footer.php'; ?>
+
 </body>
 </html>
