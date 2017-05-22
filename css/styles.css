@@ -84,6 +84,7 @@ td.titulo{
 .logo {
     float: left;
     padding: 37px 0 0 39px;
+    position: relative;
 }
 
 #search {
@@ -173,6 +174,7 @@ nav ul li a:hover, nav ul li.selected a {
     border: 1px solid #E0E0E0;
     height: 34px;
     margin: 20px 40px;
+    position: relative;
 }
 #submenu ul {
     margin: 0;

@@ -12,11 +12,23 @@
 
     <div class="container">
       <?php include '../layout/header.php'?>
+      
+          <section id="submenu"><!-- Defining the sub menu -->
+                <ul>
+                    <li><a href="cat_balones.php">Balones</a></li>
+                    <li><a href="cat_running.php">Running</a></li>
+                    <li><a href="cat_box.php">Box</a></li>
+                    <li><a href="cat_ciclismo.php">Ciclismo</a></li>
+                    <li><a href="cat_beisbol.php">Beisbol</a></li>
+                    <li><a href="cat_gym.php">Gym</a></li>
+                </ul>
+            </section>
+
         <section>
             <table id="mostrador">
                 <thead>
                     <tr>
-                        <td class="titulo" colspan="3">Balones</td>
+                        <td class="titulo" colspan="3">B&eacute;isbol</td>
                     </tr>
                 </thead>
                 <tbody>
@@ -24,7 +36,7 @@
                   require_once ('../conexionBD/conexionBD.php');
                   require_once ('../conexionBD/funciones.php');
                   # Buscamos la imagen a mostrar
-                  $query = "SELECT * FROM articulos WHERE categoria = 'balones'";
+                  $query = "SELECT * FROM articulos WHERE categoria = 'Beisbol'";
                   $articulos = consultarBaseDatos($query,$conexion);
                   foreach($articulos as $articulo){
                     $id_articulo = $articulo['id_articulo'];

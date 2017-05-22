@@ -14,11 +14,11 @@ var imagen_elemento= 'figura'+id_articulo;
 var precio_elemento = 'precio'+id_articulo;
 var descripcion_elemento = 'descripcion'+id_articulo;
 var proveedor_elemento = 'proveedor'+id_articulo;
-var imagen = document.getElementById(imagen_elemento).innerHTML;
-var nombre = document.getElementById(nombre_elemento).innerHTML;
-var precio = document.getElementById(precio_elemento).innerHTML;
-var descripcion = document.getElementById(descripcion_elemento).innerHTML;
-var proveedor = document.getElementById(proveedor_elemento).innerHTML;
+var imagen = document.getElementById(imagen_elemento).value;
+var nombre = document.getElementById(nombre_elemento).value;
+var precio = document.getElementById(precio_elemento).value;
+var descripcion = document.getElementById(descripcion_elemento).value;
+var proveedor = document.getElementById(proveedor_elemento).value;
 var botones = "<input type='button' id='compra' name='compra' value='Comprar'> "+
 "<input type='button' id='cancelar' name='cancelar' value='Cancelar'>"
 var cuerpo_articulo = "<div>"+nombre+"</div><div>"+imagen+"</div>"+precio+
