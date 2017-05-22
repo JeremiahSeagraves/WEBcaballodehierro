@@ -14,6 +14,7 @@ if(isset($_POST['enviar'])){
         $_SESSION["id_usuario"] = $row['id_usuario'];
         $_SESSION["usuario"] = $row['usuario'];
         $_SESSION["nombre"] = $row['nombre'];
+        $_SESSION["email"] = $row['email'];
         $_SESSION["contrasena"] = $row['contrasena'];
         if($row['tipo_usuario'] == "Administrador"){
 
