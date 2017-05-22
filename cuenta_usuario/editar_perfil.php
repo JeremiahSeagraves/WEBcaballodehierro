@@ -8,6 +8,8 @@
     <title>Editar Usuario</title>
     <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen">
     <link rel="stylesheet" href="../css/styles.css" type="text/css" media="screen">
+    <script type="text/javascript" src="../js/efectos_contrasena.js">
+    </script>
   </head>
   <body>
     <div class="container">
@@ -44,13 +46,13 @@
                 <td><input type="text" name="nombre" value="<?php echo $_SESSION['nombre'];?>"  required></td>
               </tr>
               <tr>
-                <label>¿Desea cambiar la contraseña?</label>
-                <input id="cambiarContrasena" type="button" value="si">
+                <td><label>¿Desea cambiar la contraseña?</label><td>
+                <td><input id="cambiar_contrasena" type="button" value="si"></td>
               </tr>
-              <tr id="mostrarContrasena">
+              <tr id="mostrar_contrasena">
 
               </tr>
-              <tr id="mostrarContrasena_vali">
+              <tr id="mostrar_contrasena_vali">
 
               </tr>
 
