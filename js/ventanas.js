@@ -40,7 +40,7 @@ function asignarEventosBotones(){
 }
 
 window.onload = function(){
-  ventana = document.getElementById('articulo');
+  ventana = document.getElementById('caja_flotante');
   window.onclick = ocultarModalClick;
   asignarEventosBotones();
 
