@@ -1,7 +1,7 @@
 <header><!-- Defining the header section of the page -->
     <nav><!-- Defining the navigation menu -->
         <ul>
-            <li class="selected"><a href="#">Inicio</a></li>
+            <li class="selected"><a href="../index.php">Inicio</a></li>
             <li><a href="#">Favoritos</a></li>
             <li><a href="articulos2.php">Todos los productos</a></li>
             <li><a href="#">Contacto</a></li>
