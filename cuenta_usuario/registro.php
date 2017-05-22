@@ -8,8 +8,8 @@ $email = $_POST['email'];
 $contrasena = $_POST['contrasena'];
 $tipo_usuario = $_POST['tipo_usuario'];
 
-$consulta = "INSERT INTO usuarios (id_usuario , usuario , nombre , email , contrasena, tipo_usuario)
-VALUES ( NULL ,'" . $usuario . "','" . $nombre . "','" . $email . "','". $contrasena . "','" . $tipo_usuario. "')";
+$consulta = "INSERT INTO usuarios (id_usuario , usuario , nombre , email , contrasena)
+VALUES ( NULL ,'" . $usuario . "','" . $nombre . "','" . $email . "','". $contrasena . "')";
 
 consultar($consulta,$conexion);
 

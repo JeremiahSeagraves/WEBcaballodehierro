@@ -10,7 +10,7 @@
         <?php
         if(isset($_SESSION["admin"])){
             if($_SESSION["admin"]){
-              echo "<li><a href = '../admin/listaUsuarios.php' class='main'>Usuarios</a></li>&nbsp";
+              echo "<li><a href = '../administrador/lista_usuarios.php' class='main'>Usuarios</a></li>&nbsp";
               echo "<li><a href = '../tabla/vista/index.php' class='main'>Admon.</a></li>&nbsp";
               echo "<li><a href = '../tabla/vista/modificarInformacion.php' class='main'>Lista Productos</a></li>&nbsp";
             }

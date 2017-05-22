@@ -69,13 +69,6 @@ if (!isset($_SESSION["usuario"])) {
                 <td><input type="password" name="contrasena_valid" required></td>
               </tr>
               <tr>
-                <td><label>Tipo de Usuario</label></td>
-                <td><select name="tipo_usuario" id="tipo_usuario">
-                  <option name="tipo_usuario" value="Administrador">Administrador</option>
-                  <option name="tipo_usuario" value="normal">Normal</option>
-                </select></td>
-              </tr>
-              <tr>
                 <td colspan="2">
                   <input type="submit" name="enviar" id="enviar" value="Enviar" />
                 </td>
