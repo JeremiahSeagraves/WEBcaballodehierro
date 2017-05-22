@@ -3,7 +3,7 @@
         <ul>
             <li class="selected"><a href="#">Inicio</a></li>
             <li><a href="#">Favoritos</a></li>
-            <li><a href="articulos2.php">Todos los productos</a></li>
+            <li><a href="../productos/articulos2.php">Todos los productos</a></li>
             <li><a href="#">Contacto</a></li>
             <li><a href="#">Acerca de nosotros</a></li>
 

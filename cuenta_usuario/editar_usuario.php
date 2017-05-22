@@ -22,7 +22,9 @@ if($contrasena==""){
 $resultado = mysqli_query($conexion, $sql);
 
     if ($resultado) {
-        
+
+
+
         header('Location: editar_perfil.php?actualizado=exitoso');
     } else {
             echo "Error: " . $sql . "<br>" . mysqli_error($conexion);

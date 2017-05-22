@@ -4,14 +4,14 @@
     <title>Productos</title>
     <meta charset="utf-8">
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <link rel="stylesheet" href="css/reset.css" type="text/css" media="screen">
-    <link rel="stylesheet" href="css/styles.css" type="text/css" media="screen">
-    <script type="text/javascript" src="js/ventanas.js" ></script>
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="../css/styles.css" type="text/css" media="screen">
+    <script type="text/javascript" src="../js/ventanas.js" ></script>
 </head>
 <body>
 
     <div class="container">
-      <?php include 'layout/header.php'?>
+      <?php include '../layout/header.php'?>
         <section>
             <table id="mostrador">
                 <thead>
@@ -21,8 +21,8 @@
                 </thead>
                 <tbody>
                   <?php
-                  require_once ('conexionBD.php');
-                  require_once ('funciones.php');
+                  require_once ('../conexionBD/conexionBD.php');
+                  require_once ('../conexionBD/funciones.php');
                   # Buscamos la imagen a mostrar
                   $query = "SELECT * FROM articulos WHERE categoria = 'balones'";
                   $articulos = consultarBaseDatos($query,$conexion);
@@ -35,7 +35,7 @@
                     $id_proveedor="proveedor".$id_articulo;
                     $id_descripcion="descripcion".$id_articulo;
                     echo "<td id=".$id_celda."><figure id=".$id_figure." name='imagen' >";
-                    echo "<img src=images/productos/".$articulo['nombre_imagen']." width='100' heigth='80' >";
+                    echo "<img src=../images/productos/".$articulo['nombre_imagen']." width='100' heigth='80' >";
                     echo "</figure><figcaption>";
                     echo "<p id =".$id_nombre.">".$articulo['nombre']."</p>";
                     echo "<p id =".$id_precio.">$".$articulo['precio']."</p>";
@@ -49,7 +49,7 @@
                 </tbody>
             </table>
         </section>
-          <?php include 'layout/footer.php'; ?>
+          <?php include '../layout/footer.php'; ?>
     </div>
     <div id="caja_flotante" class="container">
       <div id="informacion" class="modal">
