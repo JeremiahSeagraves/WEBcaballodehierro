@@ -1,18 +1,20 @@
-
-
 p:nth-child(odd){
 background: #999999;
-} 
+}
+
 p:nth-child(even){
 background: #CCCCCC;
 }
+
 p:last-child{
 	background: #FF0000;
 }
+
 /* Todo elemento que es hijo de otro elemento que tiene clase "mitexto1"*/
 .mitexto1:nth-child(2){
 	background: #00FF00;
 }
+
 :not(.mitexto2){
 	margin: 0px;
 }

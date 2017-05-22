@@ -1,0 +1,16 @@
+WebStore El Caballo de Hierro
+Integrantes: Seagraves Jeremiah, Cutz Oscar
+
+Descripción:
+El sitio web tiene como objetivo permitir las ventas de artículos deportivos
+de la tienda El Caballo de Hierro. En el sitio se podrá observar el catálogo
+completo de los artículos, así como verlos por categoría y buscar a través
+de nombre con el buscador integrado. Se podrán comprar los artículos manteni-
+endo un carrito de compras actual para después de haber seleccionado todos
+los artículos deseados, se pueda finalizar la compra.
+
+Avance actual:
+En esta entrega sólo se tiene el encabezado de la página principal, así como
+el contenedor principal, y una tabla de artículos propuesta. Posteriormente,
+esta tabla se verá llena con los artículos de una base de datos y se integrará
+el buscador, así como la clasificación por categoría.
