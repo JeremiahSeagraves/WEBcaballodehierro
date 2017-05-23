@@ -10,38 +10,32 @@
   <body>
     <div class="container">
       <?php
-            session_start();
+      session_start();
             if(!isset($_SESSION["registrado"])){
                 include '../layout/login_header.php' ;
             }else{
               include '../layout/edicion_perfil_header.php' ;
             }
             include '../layout/header.php';
-            include '../administrador/conexion.php';
-        $sql = "SELECT * FROM articulos";
+            include '../administrador/modelo/conexion.php';
+        $sql = "SELECT * FROM usuarios";
         $result = mysqli_query($conexion, $sql);
-        echo "<table id='table_articulos'>";
+        echo "<table id='table_usuarios'>";
         if (mysqli_num_rows($result) > 0) {
             echo "<tr>";
-                    echo "<th>Id del articulo</th>";
-                    echo "<th>nombre</th>";
-                    echo "<th>descripci&oacute;n</th>";
-                    echo "<th>precio</th>";
-                    echo "<th>categor&iacute;a</th>";
-                    echo "<th>proveedor</th>";
-                    echo "<th>imagen</th>";
+                    echo "<th>Id del usuario</th>";
+                    echo "<th>Usuario</th>";
+                    echo "<th>Nombre de usuario</th>";
+                    echo "<th>Email</th>";
+                    echo "<th>Tipo de Usuario</th>";
                     echo "</tr>";
                 while ($row = mysqli_fetch_assoc($result)) {
                         echo "<tr>";
-                        echo "<td>" . $row["id_articulo"]. "</td><td>"
+                        echo "<td>" . $row["id_usuario"]. "</td><td>"
+                                . $row["usuario"]. "</td><td> "
                                 . $row["nombre"]. "</td><td> "
-                                . $row["descripcion"]. "</td><td> "
-                                . $row["precio"]. "</td><td> "
-                                . $row["categoria"]. "</td><td> "
-                                . $row["proveedor"]. "</td><td> "
-                                . $row["nombre_imagen"]. "</td>";
-                        echo "<td><a href='../administrador/modificar_articulo.php?id_articulo=".$row["id_articulo"]."'>Editar</a></td>";
-                        echo "<td><a href='../administrador/eliminar_articulo.php?id_articulo=".$row["id_articulo"]."' >Eliminar</a></td>";
+                                . $row["email"]. "</td><td> "
+                                . $row["tipo_usuario"]. "</td>";
                         echo "</tr>";
                 }
         } else {
