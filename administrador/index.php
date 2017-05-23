@@ -22,7 +22,7 @@
       <div class="contacto_caja" style="clear:both;">
         <fieldset>
           <legend>Registrar Producto</legend>
-          <form action="../administrador/modelo/agregar_articulo.php" method="post" enctype="multipart/form-data" id="formulario">
+          <form action="../administrador/agregar_articulo.php" method="post" enctype="multipart/form-data" id="formulario">
             <table>
               <tr>
                 <td><label>Nombre</label></td>

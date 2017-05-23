@@ -21,13 +21,13 @@ if(isset($_POST["nombre"]) && isset($_POST["descripcion"]) && isset($_POST["prec
                   VALUES ( NULL ,'" . $_POST["nombre"]. "','" . $_POST["descripcion"] . "','" . $_POST["categoria"] . "','". $_POST["precio"] ."','". $_POST["proveedor"] . "','". $nombre_imagen . "')";
                   $result = mysqli_query($conexion,$query);
                   if($result){
-                    header("Location:../administrador/vista/index.php?mensaje =".$mensaje_exito);
+                    header("Location:../administrador/index.php?mensaje =".$mensaje_exito);
                   }else{
-                    header("Location:../administrador/vista/index.php?mensaje =".$mensaje_error);
+                    header("Location:../administrador/index.php?mensaje =".$mensaje_error);
                   }
                 }
               }else {
-                header("Location:../administrador/vista/index.php?mensaje=".$error_archivo);
+                header("Location:../administrador/index.php?mensaje=".$error_archivo);
               }
             }
  ?>

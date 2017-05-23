@@ -10,6 +10,7 @@
   <body>
     <div class="container">
       <?php
+            session_start();
             if(!isset($_SESSION["registrado"])){
                 include '../layout/login_header.php' ;
             }else{
@@ -19,22 +20,26 @@
 
             include '../administrador/conexion.php';
 
-            $id_articulo=$_GET["id_articulo"];
-            $query = "SELECT * FROM articulos WHERE id_articulo= $id_articulo";
-            $result = mysqli_query($conexion, $query);
-            $row = mysqli_fetch_assoc($result);
 
-        			$nombre=$row["nombre"];
-              $descripcion=$row["descripcion"];
-              $categoria=$row["categoria"];
-        			$precio=$row["precio"];
-              $proveedor=$row["proveedor"];
-        			$imagen=$row["nombre_imagen"];
+            if(isset($_GET["id_articulo"])){
+              $id_articulo=$_GET["id_articulo"];
+              $query = "SELECT * FROM articulos WHERE id_articulo= $id_articulo";
+              $result = mysqli_query($conexion, $query);
+              $row = mysqli_fetch_assoc($result);
+
+          			$nombre=$row["nombre"];
+                $descripcion=$row["descripcion"];
+                $categoria=$row["categoria"];
+          			$precio=$row["precio"];
+                $proveedor=$row["proveedor"];
+          			$imagen=$row["nombre_imagen"];
+              }
+
 
       ?>
       <fieldset>
         <legend>Editar Articulo</legend>
-        <form action="../administrador/modelo/modificar_articulo.php" method="post" id="formulario">
+        <form action="../administrador/modificar_articulo.php" method="post" id="formulario">
           <table>
             <tr>
               <td><label>ID articulo</label></td>
