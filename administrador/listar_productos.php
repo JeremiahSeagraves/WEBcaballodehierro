@@ -10,6 +10,7 @@
   <body>
     <div class="container">
       <?php
+            session_start();
             if(!isset($_SESSION["registrado"])){
                 include '../layout/login_header.php' ;
             }else{
@@ -38,7 +39,7 @@
                                 . $row["precio"]. "</td><td> "
                                 . $row["categoria"]. "</td><td> "
                                 . $row["proveedor"]. "</td><td> "
-                                . $row["imagen"]. "</td>";
+                                . $row["nombre_imagen"]. "</td>";
                         echo "</tr>";
                 }
         } else {

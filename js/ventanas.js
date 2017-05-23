@@ -1,49 +1,65 @@
 // Get the window
 var ventana;
+var ventanaDetalleArticulo;
 // When the user clicks anywhere outside of the window, close it
-function ocultarModalClick(event) {
-  if (event.target == ventana) {
-    ocultarModalBoton();
+
+function ocultarModales(event){
+  if (event.target == ventanaDetalleArticulo) {
+    ocultarVentanaDetalleBoton();
+  }else if (event.target == ventana) {
+     ocultarVentanaLoginBoton();
   }
 }
 
-function mostrarModal(event){
+
+function mostrarVentanaDetalleArticulo(event){
 var id_articulo = event.target.id;
 var nombre_elemento = 'nombre'+id_articulo;
 var imagen_elemento= 'figura'+id_articulo;
 var precio_elemento = 'precio'+id_articulo;
 var descripcion_elemento = 'descripcion'+id_articulo;
 var proveedor_elemento = 'proveedor'+id_articulo;
-var imagen = document.getElementById(imagen_elemento).value;
-var nombre = document.getElementById(nombre_elemento).value;
-var precio = document.getElementById(precio_elemento).value;
-var descripcion = document.getElementById(descripcion_elemento).value;
-var proveedor = document.getElementById(proveedor_elemento).value;
+var imagen = document.getElementById(imagen_elemento).innerHTML;
+var nombre = document.getElementById(nombre_elemento).innerHTML;
+var precio = document.getElementById(precio_elemento).innerHTML;
+var descripcion = document.getElementById(descripcion_elemento).textContent;
+var proveedor = document.getElementById(proveedor_elemento).textContent;
 var botones = "<input type='button' id='compra' name='compra' value='Comprar'> "+
 "<input type='button' id='cancelar' name='cancelar' value='Cancelar'>"
 var cuerpo_articulo = "<div>"+nombre+"</div><div>"+imagen+"</div>"+precio+
 "<div>"+descripcion+"</div><div>Proveedor: "+proveedor+"</div>"
 document.getElementById("informacion").innerHTML = cuerpo_articulo + botones;
-document.getElementById('cancelar').onclick=ocultarModalBoton;
-ventana.style.display = 'block';
+document.getElementById('cancelar').onclick=ocultarVentanaDetalleBoton;
+ventanaDetalleArticulo.style.display = 'block';
 }
 
-function ocultarModalBoton(){
+function mostrarVentanaLogin(event){
+    ventana.style.display='block';
+}
+
+function ocultarVentanaLoginBoton(){
   ventana.style.display = 'none';
+}
+
+function ocultarVentanaDetalleBoton(){
+  ventanaDetalleArticulo.style.display = 'none';
 }
 
 function asignarEventosBotones(){
   var botones = document.getElementsByName('vermas');
   for(var i=0;i<botones.length;i++){
-    botones[i].onclick=mostrarModal;
+    botones[i].onclick=mostrarVentanaDetalleArticulo;
   }
 }
 
 window.onload = function(){
-  ventana = document.getElementById('caja_flotante');
-  window.onclick = ocultarModalClick;
-  asignarEventosBotones();
+  ventana = document.getElementById('caja_flotante_login');
+  ventanaDetalleArticulo = document.getElementById('caja_flotante');
+  document.getElementById('inicio_sesion').onclick=mostrarVentanaLogin;
+  
+  if(ventanaDetalleArticulo!=null){
+    asignarEventosBotones();  
+  } 
 
-
-
+  window.onclick = ocultarModales;
 }

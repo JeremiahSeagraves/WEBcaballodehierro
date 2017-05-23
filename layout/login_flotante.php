@@ -1,4 +1,4 @@
-<div id="caja_flotante" class="container">
+<div id="caja_flotante_login" class="container">
       <div class="modal">
         <h1>Inicio de Sesi&oacuten</h1>
            <form id="formulario" action="inicio_sesion.php" method="post">

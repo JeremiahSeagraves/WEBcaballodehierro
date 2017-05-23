@@ -21,14 +21,14 @@
       <div class="contacto_caja" style="clear:both;">
         <fieldset>
           <legend>Registrar Producto</legend>
-          <form action="../administrador/agregar_articulo" method="post" enctype="multipart/form-data" id="formulario">
+          <form action="../administrador/agregar_articulo.php" method="post" enctype="multipart/form-data" id="formulario">
             <table>
               <tr>
                 <td><label>Nombre</label></td>
                 <td><input type="text" name="nombre" id="nombre" value="" required="required" /></td>
               </tr>
               <tr>
-                <td><label>Descripci&oacute;</label></td>
+                <td><label>Descripci&oacute;n</label></td>
                 <td><input type="text" name="descripcion" id="descripcion" value="" required="required" /></td>
               </tr>
               <tr>

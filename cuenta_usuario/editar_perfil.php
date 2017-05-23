@@ -35,7 +35,7 @@
             <table>
               <tr>
                 <td><label for="usuario">Usuario: </label></td>
-                <td><input type="text" name="usuario" value="<?php echo $_SESSION["usuario"];?>" required></td>
+                <td><input type="text" name="usuario" value="<?php echo $_SESSION["usuario"];?>" readonly="readonly"></td>
               </tr>
               <tr>
                 <td><label >Email: </label></td>
