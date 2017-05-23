@@ -61,9 +61,16 @@
                     echo "<p id =".$id_precio.">$".$articulo['precio']."</p>";
 
                     echo "<input type='button' id=".$id_articulo." name='vermas' value='Ver más'>";
-                    echo "<input type='hidden' id=".$id_proveedor." name='proveedor' value=".$articulo['proveedor']." >";
-                    echo "<input type='hidden' id=".$id_descripcion." name='descripcion' value=".$articulo['descripcion']." >";
+                    
+                    echo "<div id='oculto' style='visibility:hidden'>";
 
+                    echo "<p id =".$id_proveedor.">".$articulo['proveedor']."</p>";
+                    echo "<p id =".$id_descripcion.">".$articulo['descripcion']."</p>";
+
+                    echo "<input type='text' id='espaciado' name='blanco' >";
+
+                    echo "</div>";
+                    
                     echo "</figcaption></td>";
                   }
                   ?>

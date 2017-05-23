@@ -17,6 +17,7 @@
           }
           if(isset($_SESSION["registrado"])){
             echo "<li><a href = '../carrito/misCompras.php' class='main'>Mis compras</a></li>";
+            echo "<li><a href = '../carrito/carrito.php' class='main'>Carrito</a></li>";
           }
           ?>
             </ul>
