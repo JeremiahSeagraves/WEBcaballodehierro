@@ -11,7 +11,16 @@
 <body>
 
     <div class="container">
-      <?php include '../layout/header.php'?>
+            <?php
+            if(!isset($_SESSION["registrado"])){
+                include '../layout/login_header.php' ;
+            }else{
+              include '../layout/edicion_perfil_header.php' ;
+            }
+            include '../layout/header.php';
+
+      ?>
+
       
           <section id="submenu"><!-- Defining the sub menu -->
                 <ul>
@@ -52,8 +61,16 @@
                     echo "<p id =".$id_nombre.">".$articulo['nombre']."</p>";
                     echo "<p id =".$id_precio.">$".$articulo['precio']."</p>";
                     echo "<input type='button' id=".$id_articulo." name='vermas' value='Ver más'>";
-                    echo "<input type='hidden' id=".$id_proveedor." name='proveedor' value=".$articulo['proveedor']." >";
-                    echo "<input type='hidden' id=".$id_descripcion." name='descripcion' value=".$articulo['descripcion']." >";
+   
+                    echo "<div id='oculto' style='visibility:hidden'>";
+
+                    echo "<p id =".$id_proveedor.">".$articulo['proveedor']."</p>";
+                    echo "<p id =".$id_descripcion.">".$articulo['descripcion']."</p>";
+
+                    echo "<input type='text' id='espaciado' name='blanco'>";
+
+                    echo "</div>";
+
                     echo "</figcaption></td>";
                   }
                   ?>
@@ -65,10 +82,8 @@
     </div>
     <div id="caja_flotante" class="container">
       <div id="informacion" class="modal">
-
-
       </div>
     </div>
-
+  <?php include '../layout/login_flotante.php'; ?>
 </body>
 </html>
