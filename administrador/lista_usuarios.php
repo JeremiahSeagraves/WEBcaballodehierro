@@ -10,13 +10,14 @@
   <body>
     <div class="container">
       <?php
+      session_start();
             if(!isset($_SESSION["registrado"])){
                 include '../layout/login_header.php' ;
             }else{
               include '../layout/edicion_perfil_header.php' ;
             }
             include '../layout/header.php';
-            include '../conexionBD/conexionBD.php';
+            include '../administrador/conexion.php';
         $sql = "SELECT * FROM usuarios";
         $result = mysqli_query($conexion, $sql);
         echo "<table id='table_usuarios'>";

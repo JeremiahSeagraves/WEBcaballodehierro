@@ -10,6 +10,7 @@
   <body>
     <div class="container">
       <?php
+            session_start();
             if(!isset($_SESSION["registrado"])){
                 include '../layout/login_header.php' ;
             }else{
@@ -59,6 +60,11 @@
               </tr>
             </table>
           </form>
+          <?php
+          if (isset($_GET["mensaje"])) {
+            echo "<center>" . $_GET["mensaje"] . "</center>";
+          }
+          ?>
         </fieldset>
       </div>
       <?php include '../layout/footer.php'; ?>

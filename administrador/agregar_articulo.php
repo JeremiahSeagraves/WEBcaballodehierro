@@ -1,5 +1,7 @@
 <?php
-
+$mensaje_exito= "Registro exitoso";
+$mensaje_error= "Error al registrar";
+$error_archivo= "Archivo no es imagen";
 $directorio = "../images/products/";
 if(isset($_POST["nombre"]) && isset($_POST["descripcion"]) && isset($_POST["precio"]) && isset($_POST["proveedor"]) && isset($_POST["categoria"])){
 
@@ -16,12 +18,16 @@ if(isset($_POST["nombre"]) && isset($_POST["descripcion"]) && isset($_POST["prec
                   $nombre_imagen = $_FILES["archivo"]["name"];
                   include '../conexionBD/conexionBD';
                   $query ="INSERT INTO articulos (id_articulo , nombre ,descripcion , categoria , precio, proveedor,nombre_imagen)
-                  VALUES ( NULL ,'" . $_POST["nombre"]. "','" . $_POST["descrpcion"] . "','" . $_POST["categoria"] . "','". $_POST["precio"] ."','". $_POST["proveedor"] . "','". $nombre_imagen . "')";
-                  mysqli_query($conexion,$query);
-
+                  VALUES ( NULL ,'" . $_POST["nombre"]. "','" . $_POST["descripcion"] . "','" . $_POST["categoria"] . "','". $_POST["precio"] ."','". $_POST["proveedor"] . "','". $nombre_imagen . "')";
+                  $result = mysqli_query($conexion,$query);
+                  if($result){
+                    header("Location:../administrador/index.php?mensaje =".$mensaje_exito);
+                  }else{
+                    header("Location:../administrador/index.php?mensaje =".$mensaje_error);
+                  }
                 }
               }else {
-                # code...
+                header("Location:../administrador/index.php?mensaje=".$error_archivo);
               }
             }
  ?>

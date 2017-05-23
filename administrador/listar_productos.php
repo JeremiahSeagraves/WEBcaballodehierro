@@ -17,7 +17,7 @@
               include '../layout/edicion_perfil_header.php' ;
             }
             include '../layout/header.php';
-            include '../conexionBD/conexionBD.php';
+            include '../administrador/conexion.php';
         $sql = "SELECT * FROM articulos";
         $result = mysqli_query($conexion, $sql);
         echo "<table id='table_articulos'>";
@@ -40,6 +40,8 @@
                                 . $row["categoria"]. "</td><td> "
                                 . $row["proveedor"]. "</td><td> "
                                 . $row["nombre_imagen"]. "</td>";
+                        echo "<td><a href='../administrador/modificar_articulo.php?id_articulo=".$row["id_articulo"]."'>Editar</a></td>";
+                        echo "<td><a href='../administrador/eliminar_articulo.php?id_articulo=".$row["id_articulo"]."' >Eliminar</a></td>";
                         echo "</tr>";
                 }
         } else {
