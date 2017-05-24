@@ -28,7 +28,6 @@ if ($filasn <= 0 || isset($_GET['nologin'])) {
 
     $_SESSION["nombre"] = $rowsresult['nombre'];
     $_SESSION["email"] = $rowsresult['email'];
-    echo '<script type=\"text/javascript\">alert(\"Gracias Por Registrarse\");</script>';
     if ($rowsresult['tipo_Usuario'] == 'Administrador') {
         header('Location: ../index.php?admin=true');
     } else {

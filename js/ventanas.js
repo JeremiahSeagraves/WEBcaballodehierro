@@ -63,11 +63,15 @@ function asignarEventosBotones(){
 window.onload = function(){
   ventana = document.getElementById('caja_flotante_login');
   ventanaDetalleArticulo = document.getElementById('caja_flotante');
-  document.getElementById('inicio_sesion').onclick=mostrarVentanaLogin;
-  
+    secion_inicion_sesion= document.getElementById('inicio_sesion');
+  if(  secion_inicion_sesion =! null){
+    secion_inicion_sesion.onclick=mostrarVentanaLogin;
+  }
+
+
   if(ventanaDetalleArticulo!=null){
-    asignarEventosBotones();  
-  } 
+    asignarEventosBotones();
+  }
 
   window.onclick = ocultarModales;
 }

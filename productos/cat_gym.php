@@ -12,6 +12,7 @@
 
     <div class="container">
       <?php
+            session_start();
             if(!isset($_SESSION["registrado"])){
                 include '../layout/login_header.php' ;
             }else{
@@ -20,7 +21,7 @@
             include '../layout/header.php';
 
       ?>
-      
+
           <section id="submenu"><!-- Defining the sub menu -->
                 <ul>
                     <li><a href="cat_balones.php">Balones</a></li>
@@ -41,7 +42,7 @@
                 </thead>
                 <tbody>
                   <?php
-                  require_once ('../conexionBD/conexionBD.php');
+                  require_once ('../administrador/conexion.php');
                   require_once ('../conexionBD/funciones.php');
                   # Buscamos la imagen a mostrar
                   $query = "SELECT * FROM articulos WHERE categoria = 'Gym'";
@@ -60,7 +61,7 @@
                     echo "<p id =".$id_nombre.">".$articulo['nombre']."</p>";
                     echo "<p id =".$id_precio.">$".$articulo['precio']."</p>";
                     echo "<input type='button' id=".$id_articulo." name='vermas' value='Ver más'>";
-                    
+
                     echo "<div id='oculto' style='visibility:hidden'>";
 
                     echo "<p id =".$id_proveedor.">".$articulo['proveedor']."</p>";

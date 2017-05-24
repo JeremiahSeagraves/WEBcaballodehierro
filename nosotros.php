@@ -46,8 +46,7 @@
 <header><!-- Defining the header section of the page -->
     <nav><!-- Defining the navigation menu -->
         <ul>
-            <li class="selected"><a href="#">Inicio</a></li>
-            <li><a href="#">Favoritos</a></li>
+            <li class="selected"><a href="index.php">Inicio</a></li>
             <li><a href="productos/cat_balones.php">Todos los productos</a></li>
             <li><a href="contacto/contacto.php">Contacto</a></li>
             <li><a href="nosotros.php">Acerca de nosotros</a></li>
@@ -55,14 +54,15 @@
         <?php
         if(isset($_SESSION["admin"])){
             if($_SESSION["admin"]){
-              echo "<li><a href = 'administrador/listar_usuarios.php' class='main'>Usuarios</a></li>&nbsp";
-              echo "<li><a href = 'administrador/index.php' class='main'>Admon.</a></li>&nbsp";
-              echo "<li><a href = 'administrador/listar_productos.php' class='main'>Lista Productos</a></li>&nbsp";
+              echo "<li><a href = 'administrador/listar_usuarios.php' >Usuarios</a></li>&nbsp";
+              echo "<li><a href = 'administrador/index.php' >Admon.</a></li>&nbsp";
+              echo "<li><a href = 'administrador/listar_productos.php' >Lista Productos</a></li>&nbsp";
             }
           }
           if(isset($_SESSION["registrado"])){
-            echo "<li><a href = 'carrito/misCompras.php' class='main'>Mis compras</a></li>";
-          }echo "<li><a href = 'carrito/carrito.php' class='main'>Carrito</a></li>";
+            echo "<li><a href = 'carrito/misCompras.php' >Mis compras</a></li>";
+            echo "<li><a href = 'carrito/carrito.php' >Carrito</a></li>";
+          }
           ?>
             </ul>
     </nav>
@@ -92,9 +92,9 @@
   <div style="font-size:18pt">
 
     <br>
-    <br>  
+    <br>
     <p style="line-height:normal">Somos una empresa dedicada a la venta de artículos deportivos  por unidad y por mayoreo.
-    <br>Encuéntranos en nuestro local Plaza Dorada, por 29 y 31 Local 6, Cto. Colonias 130, Buenavista, 97125 Mérida, Yuc. 
+    <br>Encuéntranos en nuestro local Plaza Dorada, por 29 y 31 Local 6, Cto. Colonias 130, Buenavista, 97125 Mérida, Yuc.
     <br>Horario de atención: 9:00am -9:00pm</p>
   <br>
   <br>
@@ -127,4 +127,3 @@
 </div>
 </body>
 </html>
-
