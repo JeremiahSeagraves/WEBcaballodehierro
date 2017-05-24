@@ -38,7 +38,7 @@
                 <td><input type="text" name="usuario" value="<?php echo $_SESSION["usuario"];?>" readonly="readonly"></td>
               </tr>
               <tr>
-                <td><label >Email: </label></td>
+                <td><label >Correo electr&oacute;nico: </label></td>
                 <td><input type="email" name="email" value="<?php echo $_SESSION['email'];?>" required></td>
               </tr>
               <tr>

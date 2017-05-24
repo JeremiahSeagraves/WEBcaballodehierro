@@ -16,6 +16,7 @@ if (!isset($_SESSION["usuario"])) {
     <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen">
     <link rel="stylesheet" href="../css/styles.css" type="text/css" media="screen">
     <script type="text/javascript" src="../js/efectos.js"></script>
+    <script type="text/javascript" src="../js/validaciones.js"></script>
   </head>
   <body>
     <div class="container">
@@ -46,14 +47,14 @@ if (!isset($_SESSION["usuario"])) {
           ?>
         <fieldset>
           <legend>Registro</legend>
-          <form class="" action="registro.php" method="post">
+          <form class="" action="registro.php" method="post" onsubmit= "return validarFormularioRegistroUsuario(this)">
             <table>
               <tr>
                 <td><label for="usuario">Usuario: </label></td>
                 <td><input type="text" name="usuario" required></td>
               </tr>
               <tr>
-                <td><label >Email: </label></td>
+                <td><label >Correo electr&oacute;nico: </label></td>
                 <td><input type="email" name="email"  required></td>
               </tr>
               <tr>
@@ -62,11 +63,11 @@ if (!isset($_SESSION["usuario"])) {
               </tr>
               <tr>
                 <td><label >Contrase&ntilde;a </label></td>
-                <td><input type="password" name="contrasena"  required></td>
+                <td><input id="contrasena" type="password" name="contrasena"  required></td>
               </tr>
               <tr>
                 <td><label>Vuelva a introducir la contrase&ntilde;a</label></td>
-                <td><input type="password" name="contrasena_valid" required></td>
+                <td><input  id="contrasena_valid" type="password" name="contrasena_valid" required></td>
               </tr>
               <tr>
                 <td colspan="2">

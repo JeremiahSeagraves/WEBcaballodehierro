@@ -24,14 +24,21 @@ var nombre = document.getElementById(nombre_elemento).innerHTML;
 var precio = document.getElementById(precio_elemento).innerHTML;
 var descripcion = document.getElementById(descripcion_elemento).textContent;
 var proveedor = document.getElementById(proveedor_elemento).textContent;
-alert(descripcion);
-var botones = "<input type='button' id='compra' name='compra' value='Comprar'> "+
-"<input type='button' id='cancelar' name='cancelar' value='Cancelar'>"
+var botones = "<input type='button' id='compra' name='compra' value='Comprar')>"+
+"<input type='button' id='cancelar' name='cancelar' value='Cancelar'>";
+
 var cuerpo_articulo = "<div>"+nombre+"</div><div>"+imagen+"</div>"+precio+
-"<div>"+descripcion+"</div><div>Proveedor: "+proveedor+"</div>"
+"<div>"+descripcion+"</div><div>Proveedor: "+proveedor+"</div>";
+
 document.getElementById("informacion").innerHTML = cuerpo_articulo + botones;
 document.getElementById('cancelar').onclick=ocultarVentanaDetalleBoton;
+
+
 ventanaDetalleArticulo.style.display = 'block';
+}
+
+function enviarAComprar(id){
+  location.href="../carrito/articulosseleccionados.php?articulo="+id;
 }
 
 function mostrarVentanaLogin(event){
