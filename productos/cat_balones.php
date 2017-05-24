@@ -12,10 +12,11 @@
 
     <div class="container">
       <?php
+           session_start();
             if(!isset($_SESSION["registrado"])){
                 include '../layout/login_header.php' ;
             }else{
-              include '../layout/edicion_perfil_header.php' ;
+              include '../layout/edicion_perfil_header.php';
             }
             include '../layout/header.php';
 
@@ -41,7 +42,7 @@
                 </thead>
                 <tbody>
                   <?php
-                  require_once ('../conexionBD/conexionBD.php');
+                  require_once ('../administrador/conexion.php');
                   require_once ('../conexionBD/funciones.php');
                   # Buscamos la imagen a mostrar
                   $query = "SELECT * FROM articulos WHERE categoria = 'balones'";
@@ -61,7 +62,7 @@
                     echo "<p id =".$id_precio.">$".$articulo['precio']."</p>";
 
                     echo "<input type='button' id=".$id_articulo." name='vermas' value='Ver más'>";
-                    
+
                     echo "<div id='oculto' style='visibility:hidden'>";
 
                     echo "<p id =".$id_proveedor.">".$articulo['proveedor']."</p>";
@@ -70,7 +71,7 @@
                     echo "<input type='text' id='espaciado' name='blanco' >";
 
                     echo "</div>";
-                    
+
                     echo "</figcaption></td>";
                   }
                   ?>

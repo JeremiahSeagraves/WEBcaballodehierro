@@ -2,7 +2,6 @@
     <nav><!-- Defining the navigation menu -->
         <ul>
             <li class="selected"><a href="../index.php">Inicio</a></li>
-            <li><a href="#">Favoritos</a></li>
             <li><a href="../productos/cat_balones.php">Todos los productos</a></li>
             <li><a href="../contacto/contacto.php">Contacto</a></li>
             <li><a href="../nosotros.php">Acerca de nosotros</a></li>

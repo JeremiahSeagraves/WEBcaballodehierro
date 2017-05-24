@@ -47,7 +47,6 @@
     <nav><!-- Defining the navigation menu -->
         <ul>
             <li class="selected"><a href="#">Inicio</a></li>
-            <li><a href="#">Favoritos</a></li>
             <li><a href="productos/cat_balones.php">Todos los productos</a></li>
             <li><a href="contacto/contacto.php">Contacto</a></li>
             <li><a href="nosotros.php">Acerca de nosotros</a></li>
@@ -62,7 +61,8 @@
           }
           if(isset($_SESSION["registrado"])){
             echo "<li><a href = 'carrito/misCompras.php' class='main'>Mis compras</a></li>";
-          }echo "<li><a href = 'carrito/carrito.php' class='main'>Carrito</a></li>";
+						echo "<li><a href = 'carrito/carrito.php' class='main'>Carrito</a></li>";
+          }
           ?>
             </ul>
     </nav>
