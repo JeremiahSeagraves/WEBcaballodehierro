@@ -8,6 +8,7 @@ if(isset($_POST["nombre"]) && isset($_POST["descripcion"]) && isset($_POST["prec
             if ((($_FILES["archivo"]["type"] == "image/gif") ||
                 ($_FILES["archivo"]["type"] == "image/jpg") ||
                 ($_FILES["archivo"]["type"] == "image/jpeg") ||
+                ($_FILES["archivo"]["type"] == "image/png") ||
                 ($_FILES["archivo"]["type"] == "image/pjpeg"))) {
         //Si es que hubo un error en la subida, mostrarlo, de la variable $_FILES podemos extraer el valor de [error], que almacena un valor booleano (1 o 0).
                 if ($_FILES["archivo"]["error"] > 0) {

@@ -5,7 +5,7 @@
             <li><a href="#">Favoritos</a></li>
             <li><a href="../productos/cat_balones.php">Todos los productos</a></li>
             <li><a href="../contacto/contacto.php">Contacto</a></li>
-            <li><a href="#">Acerca de nosotros</a></li>
+            <li><a href="../nosotros.php">Acerca de nosotros</a></li>
 
         <?php
         if(isset($_SESSION["admin"])){
