@@ -64,7 +64,7 @@ window.onload = function(){
   ventana = document.getElementById('caja_flotante_login');
   ventanaDetalleArticulo = document.getElementById('caja_flotante');
     secion_inicion_sesion= document.getElementById('inicio_sesion');
-  if(  secion_inicion_sesion =! null){
+  if(  secion_inicion_sesion != null){
     secion_inicion_sesion.onclick=mostrarVentanaLogin;
   }
 
