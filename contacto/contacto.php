@@ -35,7 +35,6 @@
                             <div>
                                 <label for="mensaje">Mensaje: </label>
                                 <textarea name="mensaje" id="mensaje" rows="10" cols="56" required></textarea>
-                                <span id="validar-mensaje"></span>
                             </div>
                             <p id="envio">
                                 <input type="submit" name="enviar" id="enviar" value="Enviar" />

@@ -67,7 +67,7 @@
                     echo "<p id =".$id_proveedor.">".$articulo['proveedor']."</p>";
                     echo "<p id =".$id_descripcion.">".$articulo['descripcion']."</p>";
 
-                    echo "<input type='text' id='espaciado' name='blanco' >";
+                    echo "<input type='text' id='espaciado' name='blanco'>";
 
                     echo "</div>";
                     

@@ -21,10 +21,10 @@
 
 <table width="90%"  height="90%"border="1" align="center" id="tablacarrito">
                         <tr align="center" style="background-color:#008fbe; color:#fff">
-                            <td width="27%">PRODUCTO</td>
-                            <td width="18%">PRECIO</td>
-                            <td width="37%">CANTIDAD</td>
-                            <td width="18%">TOTAL</td>
+                            <td width="25%">PRODUCTO</td>
+                            <td width="20%">PRECIO</td>
+                            <td width="30%">CANTIDAD</td>
+                            <td width="15%">TOTAL</td>
                         </tr>
         <?php
             if (isset($_SESSION['carrito'])) {
