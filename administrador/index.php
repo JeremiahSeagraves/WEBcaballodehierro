@@ -45,7 +45,7 @@
               </tr>
               <tr>
                 <td><label>Precio</label></td>
-                <td><input type="text" name="precio" id="precio" value="" required="required" /></td>
+                <td><input type="number" step="0.01" name="precio" id="precio" value="" required="required" /></td>
               </tr>
               <tr>
                 <td><label>Proveedor</label></td>

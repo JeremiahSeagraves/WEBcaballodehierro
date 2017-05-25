@@ -17,7 +17,7 @@ function ocultarModalBoton(){
 
 
 window.onload = function(){
-  ventana = document.getElementById('caja_flotante');
+  ventana = document.getElementById('caja_flotante_login');
   window.onclick = ocultarModalClick;
   document.getElementById('inicio_sesion').onclick=mostrarModal;
 
